@@ -12,7 +12,7 @@ def index(request):
 
 def ankur(request):
     context_dir = {
-    	person = Person.objects.get(name="ankur")
+    	'person' : Person.objects.filter(name="ankur")[0],
     }
     return render_to_response('index.html', context_dir, context_instance=RequestContext(request))
 
